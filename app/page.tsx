@@ -40,6 +40,14 @@ export default function Home() {
     )
   }
 
+  const selectAllParts = () => {
+    setSelectedParts(parts)
+  }
+
+  const clearAllParts = () => {
+    setSelectedParts([])
+  }
+
   const shuffleQuestions = (items: Question[]) => {
     const shuffled = [...items]
 
@@ -118,6 +126,23 @@ export default function Home() {
           </h1>
 
           <div className="p-8 space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={selectAllParts}
+                className="border rounded-md py-3 font-semibold hover:bg-gray-100"
+              >
+                전체 선택
+              </button>
+              <button
+                type="button"
+                onClick={clearAllParts}
+                className="border rounded-md py-3 font-semibold hover:bg-gray-100"
+              >
+                전체 해제
+              </button>
+            </div>
+
             {parts.map((part) => {
               const count = questions.filter((q) => q.part === part).length
 
