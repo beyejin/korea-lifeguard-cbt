@@ -30,6 +30,8 @@ Git이 없다면 GitHub 페이지에서 `Code` → `Download ZIP`으로 내려�
 
 ### 2. 패키지 설치
 
+아래 명령은 반드시 프로젝트 폴더 안에서 실행해야 합니다. 터미널 경로가 `korea-lifeguard-cbt`인지 확인하세요.
+
 ```bash
 npm install
 ```
@@ -40,17 +42,33 @@ npm install
 npm run dev
 ```
 
-브라우저에서 [http://localhost:3000](http://localhost:3000)을 엽니다.
+개발 서버가 켜져 있는 동안만 접속할 수 있습니다. 터미널에 `Ready`가 표시되면 브라우저에서 [http://localhost:3000](http://localhost:3000)을 엽니다.
 
 Windows PowerShell, Windows 명령 프롬프트, macOS 터미널 모두 같은 명령을 사용하면 됩니다.
 
 ## 다시 실행하기
 
-한 번 `npm install`을 했다면 다음부터는 프로젝트 폴더에서 이것만 실행하면 됩니다.
+한 번 `npm install`을 했다면 다음부터는 프로젝트 폴더로 이동한 뒤 이것만 실행하면 됩니다.
 
 ```bash
+cd korea-lifeguard-cbt
 npm run dev
 ```
+
+폴더를 다른 위치에 두었다면 `cd` 뒤에는 본인 컴퓨터의 실제 폴더 경로를 넣으면 됩니다.
+
+예시:
+
+```bash
+cd ~/Desktop/lifeguard_cbt/cbt-app
+npm run dev
+```
+
+## 종료하기
+
+개발 서버를 끄려면 `npm run dev`가 실행 중인 터미널에서 `Ctrl + C`를 누릅니다.
+
+터미널 창을 닫거나 컴퓨터를 재시동해도 서버는 꺼집니다. 서버가 꺼지면 [http://localhost:3000](http://localhost:3000)은 더 이상 열리지 않습니다.
 
 ## 데이터
 
@@ -78,3 +96,27 @@ Node.js가 설치되지 않았거나 터미널을 설치 전에 열어둔 상태
 ### 3000번 포트가 이미 사용 중이라고 나올 때
 
 다른 개발 서버가 켜져 있을 수 있습니다. 터미널 안내에 따라 다른 포트를 사용하거나, 기존 서버를 종료한 뒤 다시 실행하세요.
+
+Next.js가 아래처럼 PID를 알려주는 경우:
+
+```text
+Run kill 26841 to stop it.
+```
+
+macOS/Linux에서는 안내된 번호로 종료할 수 있습니다.
+
+```bash
+kill 26841
+```
+
+그래도 종료되지 않으면 강제 종료합니다.
+
+```bash
+kill -9 26841
+```
+
+Windows에서는 PowerShell에서 아래처럼 종료할 수 있습니다. 숫자는 터미널에 표시된 PID로 바꿔 입력하세요.
+
+```powershell
+Stop-Process -Id 26841
+```
