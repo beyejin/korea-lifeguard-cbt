@@ -233,7 +233,7 @@ export default function Home() {
         </h1>
 
         {q.box && (
-          <div className="mb-8 border border-gray-400 bg-white px-5 py-4 leading-relaxed whitespace-pre-line">
+          <div className="mb-8 border border-gray-400 bg-white px-5 py-4 leading-relaxed whitespace-pre-wrap">
             {q.box}
           </div>
         )}
