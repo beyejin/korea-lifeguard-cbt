@@ -6,6 +6,7 @@ type Question = {
   id: number
   part: string
   question: string
+  box?: string
   options: string[]
   answer: number
   explanation: string
@@ -230,6 +231,12 @@ export default function Home() {
         <h1 className="text-xl font-bold leading-relaxed mb-8">
           {q.id}. {q.question}
         </h1>
+
+        {q.box && (
+          <div className="mb-8 border border-gray-400 bg-white px-5 py-4 leading-relaxed whitespace-pre-line">
+            {q.box}
+          </div>
+        )}
 
         <div className="space-y-3">
           {q.options.map((option, idx) => {
